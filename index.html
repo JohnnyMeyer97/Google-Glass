@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Google Glass</title>
+	<link rel="stylesheet" type="text/css" href="_css/estilo.css" />
+	<script src="_javascript/funcoes.js"></script>
+</head>
+<body>
+
+	<div id="interface"> 
+<!-- start CABEÇALHO
+----------------------------------------------------------------------------------------->
+
+		<header id="cabecalho">
+			<hgroup> <!-- Tag do html5 que agrupa o conteúdo, não tem diferença visual, somente semantica, como há titúlos o melhor sempre é agrupar-->
+				<h1><a href="index.html">Google Glass</a></h1>
+				<h2><a href="index.html">A revolução do Google está chegando</a></h2>
+				<a href="index.html"><img src="_imagens/glass-logo-peq.jpg"></a>
+			</hgroup>
+			
+			<img id="icone" src="_imagens/glass-oculos-preto-peq.png">
+			
+			<nav id="menu">
+				<h1>Menu Principal</h1>
+				<ul>
+					<li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a href="index.html">Home</a></li>
+					<li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a href="specs.html">Especificações</a></li>
+					<li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a href="fotos.html">Fotos</a></li>
+					<li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a href="multimidia.html">Multimídia</a></li>
+					<li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/glass-oculos-preto-peq.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+				</ul>
+			</nav>
+
+		</header>
+
+<!-- end /CABEÇALHO
+----------------------------------------------------------------------------------------->
+		<section id="corpo">
+			<article id="noticia-principal">
+				<header id="cabacalho-artigo">
+					<hgroup>
+						<h3>Tecnologia > Inovações</h3>
+						<h1>Saiba tudo sobre o Google Glass</h1>
+						<h2>por Johnny Meyer</h2>
+						<h3 class="direita">Atualizado em 26/Maio/2019</h3>
+					</hgroup>
+				</header>
+
+				<!-- &nbsp; (Non-breaking Space) é uma "marca" serve para adicionar espaço, assim como a tag <br/> serve para quebra de linha -->
+
+				<h2>O que é</h2>
+				<p>O <b>Google Glass</b> é um acessório em forma de óculos que possibilita a interação dos usuários com diversos conteúdos em realidade aumentada. Também chamado de <a href="http://glass.google.com" target="_blank">Project Glass</a>, o eletrônico é capaz de tirar fotos a partir de comandos de voz, enviar mensagens instantâneas e realizar vídeo&shy;con&shy;ferên&shy;cias. Seu lançamento está previsto para 2014, e seu preço deve ser de US$ 1,5 mil. Atualmente o <em>Google Glass</em> encontra-se em fase de testes e já possui um vídeo totalmente gravado com o dispositivo. Além disso, a companhia de buscas registrou novas patentes anti-furto e de desbloqueio de tela para o acessório.</p>
+
+				<!-- 
+				i e em (diferença semântica). i - Simplismente letra inclinada; em - Além de inclinada, tem ênfase. 
+				<del>Texto riscado</del>
+				-->
+
+				<!-- 
+				%shy; (Soft Hyphen) quebra de linha e adiciona um ífen 
+				-->
+
+				<!-- 
+				Exemplo de formatação css direto no html5:
+					<h2 style="text-align: center;">O que é</h2>
+					<p style="text-align: justify; text-indent: 50px;">O <b>Google Glass</b> é um acessório...
+				-->
+
+				<!--
+				<p>Exemplos de <sup>formatação</sup></p>
+				<p>Exemplos de <sub>formatação</sub></p>
+				<p> x<sup>2</sup> e H<sub>2</sub>O</p>
+				<p>
+
+				<pre> // Mostra a formatação do jeito que está.
+				<code> //a tag <code> é semântica, e serve para dizer ao navegador que você está mostrando um trecho de código.
+				#include &lt;iostream&gt;
+				int main(){
+					cout << "Olá, Mundo!";
+					return 0;
+				}
+				</code>
+				</pre>
+
+				</p>
+				-->
+
+				<figure class="foto-legenda"> <!-- Nova tag do html5, serve para colocar imagens e dar significado semantico a elas. -->
+					<img src="_imagens/glass-quadro-homem-mulher.jpg"/>
+					<figcaption> <!-- Legenda da imagem -->
+						<h3>Google Glass</h3>
+						<p>Uma nova maneira de ver o mundo.</p>
+					</figcaption>
+				</figure>
+
+				<h2>Data de lançamento</h2>
+				<p>Não há uma data específica e oficial para o dispositivo ser lançado, ainda. Pode ser que ele esteja disponível em demonstrações a partir de 2013, mas seu lançamento para as lojas fica para, pelo menos, 2014.</p>
+
+				<h2>Especificações Técnicas</h2>
+
+				<table id="tabelaspec">
+				<caption>Tabela Técnica do Google Glass <span>Maio/2019</span></caption>
+
+				<tr><td class="ce">Tela</td><td class="cd">Resolução equivalente a tela de 25"</td></tr>
+				<tr><td rowspan="2" class="ce">Camera</td> <td class="cd">5MP para fotos</td></tr>
+				<tr><td class="cd">720p para vídeos</td></tr>
+				<tr><td rowspan="2" class="ce">Conectividade</td> <td class="cd">Wi-Fi</td></tr>
+				<tr><td class="cd">Bluetooth</td></tr>
+				<tr><td class="ce">Memória Interna</td> <td class="cd">12GB</td></tr>
+				<!--<tr><td colspan="2">Linha Extra de Exemplo</td></tr>-->
+				</table>
+
+				<h2>Como funciona</h2>
+
+				<p>De acordo com fontes próximas do Google, os óculos vão contar com uma pequena tela de LCD ou AMOLED na parte superior e em frente aos olhos do usuário. Com o uso de uma câmera e GPS, você pode se situar, assim como selecionar opções com o movimento da cabeça</p>
+
+				<h2>O que você pode fazer com o Google Glasses</h2>
+				<p>O vídeo de divulgação do Google mostra que você pode se transformar em uma espécie de “super-<wbr/>humano”, já que o aparelho pode indicar a quantos metros você está de seu destino, se o metrô está aberto ou fechado, mostrar o clima, agenda e até mesmo permitir que você marque encontros apenas com comandos de voz.</p>
+
+				<!-- <wbr> (Word Breaker) tag nova do html5. serve para quebra de palavra. -->
+
+				<div>
+					<video controls="controls" poster="_imagens/video-mini01.jpg">
+						<source src="_media/one-day.mp4" type="video/mp4">
+						<!--<source src="_media/one-day.webm" type="video/webm">
+						<source src="_media/one-day.ogv" type="video/ogg">-->
+					</video>
+				</div>
+			</article>
+		</section>
+
+		<aside id="lateral">
+			<h2>Outras Notícias</h2>
+			<h2>Vídeo mais recente</h2>
+
+			<div>
+				<video style="width: 350px;" controls="controls" poster="_imagens/video-mini02.jpg">
+					<source src="_media/how-it-feels.mp4" type="video/mp4">
+					<!--<source src="_media/how-it-feels.webm" type="video/webm">
+					<source src="_media/how-it-feels.ogv" type="video/ogg">-->
+				</video>
+			</div>
+
+			<h2>Novidades no Glass</h2>
+			<p>O Google enfim revelou as especificações completas do Google Glass, e com ele uma surpresa ainda inédita no mercado: a gigante das buscas usará um sistema de áudio baseado na transdução por condução. Através das hastes dos óculos, o som será transmitido para o ouvido do usuário por meio de microvibrações em determinados ossos de sua cabeça, sem usar nenhum tipo de alto-falante.</p>
+
+			<p>Além da surpresa do áudio, a tela montada a frente do olho do usuário também chamou atenção. Serão 640 x 360 pixels de resolução que, em proporção, equivaleria a um monitor de 25 polegadas de alta definição colocado a 2,5 metros de distância do espectador.</p>
+		</aside>
+
+		<footer id="rodape">
+			<p>Copyright &copy; 2013 - by Johnny Meyer<br/>
+			<a href="#" target="_blank">Facebook</a> | 
+			<a href="#" target="_blank">Twitter</a></p>
+		</footer>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tudo sobre Google Glass</title>
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="_css/form.css">
+    <script src="_javascript/funcoes.js"></script>
+    <script>
+        function calc_total() {
+            var qtd = parseInt(document.getElementById('cQtd').value);
+            tot = qtd * 1500;
+            document.getElementById('cTot').value = tot;
+        }
+        /*function listaCidades(estado){
+            var cidadesPorEstado = {
+                AC:["Acrelândia","Assis Brasil"],
+                AL:["Analdia","Arapiraca","Atalaia","Barra","Água Branca"],
+                AM:["Alvarães"],
+                RJ:["Tiro pra todo lado","Ladrão","Calor infernal"];
+            }
+            var options = if(cidadesPorEstado.hasOwnProperty(estado)){
+                for(var i = 0; i < cidadesPorEstado[estado].length; i++){
+                    options += '<options value = "+cidadesPorEstado[estado][i]+" />' // a variável options vai receber o atributo options value, que será o estado com as cidades.
+                }
+            }
+            document.getElementById('cidade').innerHTML = options
+        } NÃO FUNCIONA*/
+    </script>
+</head>
+<body>
+
+    <div id="interface"> 
+<!-- start CABEÇALHO
+----------------------------------------------------------------------------------------->
+
+        <header id="cabecalho">
+            <hgroup> <!-- Tag do html5 que agrupa o conteúdo, não tem diferença visual, somente semantica, como há titúlos o melhor sempre é agrupar-->
+                <h1><a href="index.html">Google Glass</a></h1>
+                <h2><a href="index.html">A revolução do Google está chegando</a></h2>
+                <a href="index.html"><img src="_imagens/glass-logo-peq.jpg"></a>
+            </hgroup>
+            
+            <img id="icone" src="_imagens/contato.png">
+            
+            <nav id="menu">
+                <h1>Menu Principal</h1>
+                <ul>
+                    <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+                    <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/especificacoes.png')"><a href="specs.html">Especificações</a></li>
+                    <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+                    <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+                    <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+                </ul>
+            </nav>
+
+        </header>
+        <section id="corpo-full">
+            <article id="noticia-principal">
+                <header id="cabecalho-artigo">
+                    <hgroup>
+                        <h3>Fale Conosco > Contato</h3>
+                        <h1>Formulário de Contato</h1>
+                        <h2>por Johnny Meyer</h2>
+                        <h3 class="direita">Atualizado em 26/Maio/2019</h3>
+                    </hgroup>
+                </header>
+
+                <form method="post" id="fContato" action="mailto:antoniolimarodri2@hotmail.com" oninput="calc_total();">
+
+                    <fieldset id="usuario"> <!-- Conjunto de campos -->
+                        <legend>Identificação do Usuário</legend>
+                            <p><label for="cNome">Nome:</label> <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo" required="required" /></p>
+                            <p><label for="cSenha">Senha:</label> <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 Dígitos" required="required" /></p>
+                            <p><label for="cMail">E-mail:</label> <input type="email" name="tMail" id="cMail" size="20" maxlength="40" required /></p>
+                            <fieldset id="sexo"><legend>Sexo:</legend>
+                                <input type="radio" name="tsexo" id="cMasc" /> <label for="cMasc">Masculino</label><br/>
+                                <input type="radio" name="tsexo" id="cFem" /> <label for="cFem">Feminino</label></fieldset>
+                            <p>Data de Nascimento:<input type="date" name="tNasc" id="cNasc" /></p>
+                    </fieldset>
+                    <!--
+                        OBS.: LEMBRE DE ADICIONAR O PARÂMETRO DE DEVE SER PREENCHIDO.
+                        -------------------------------------------------------------
+                    size: Tamanho que a caixa mostra em caracteres.
+                    maxlength: Limita o numero máximo de caracteres.
+                    label: (função semântica) Serve para identificar o objeto relativo a ele.
+                     -->
+
+                    <fieldset id="endereco">
+                        <legend>Endereço do Usuário</legend>
+                        <p><label for="cRua">Logradouro:</label> <input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, Av, Trav, ..." required /></p>
+                        <p><label for="cNum">Número:</label> <input type="number" name="tNum" id="cNum" min="0" max="99999" required /></p>
+                        <p><label for="cEst">Estado:</label>
+                            <select name="tEst" id="cEst" oncuechange="listaCidades(this.value)">
+                                <optgroup label="Região Norte">
+                                    <option value="AC">Acre</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="TO">Tocantins</option>                            
+                                </optgroup>
+                                <optgroup label="Região Nordeste">
+                                    <option value="MA">Maranhão</option>
+                                    <option value="PI">Piaui</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="BA">Bahia</option>
+                                </optgroup>
+                                <optgroup label="Região Centro-Oeste">
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato grosso do Sul</option>
+                                </optgroup>
+                                <optgroup label="Região Sudeste">
+                                    <option value="SP" selected>São Paulo</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="ES">Espírito Santo</option>
+                                </optgroup>
+                                <optgroup label="Região Sul">
+                                    <option value="PR">Paraná</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                </optgroup>
+                                <!--
+                                value: o que será enviado para o servidor, se não colocar o que está entre
+                                a tag option é o que será enviado
+                                -->
+                            </select></p>
+                        <p><label for="cCid">Cidade:</label>
+                            <input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua Cidade" list="cidades" required="required" onfocus="listaCidades(cEst.value)" /></p>
+                            <datalist id="cidades">
+
+                            </datalist>
+                    </fieldset>
+                    
+                    <fieldset id="mensagem">
+                        <legend>Mensagem do Usuário</legend>
+                        <p><label for="cUrg">Grau de Urgência:</label>
+                            Mín<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2">Máx</p>
+                        <p><label for="cMsg">Mensagem:</label>
+                            <textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Deixe aqui sua mensagem"></textarea></p>
+                        <!--
+                        step: salto, o padrão e 1.
+                        -->
+                    </fieldset>
+                    
+                    <fieldset id="pedido">
+                        <legend>Quero um Google Glass</legend>
+                            <p><input type="checkbox" name="tPed" id="cPed" />
+                                <label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
+                            <p><label for="cCor">Cor:</label>
+                                <input type="color" name="tCor" id="cCor" value="#0000ff" /></p>
+                            <p><label for="cQtd">Quantidade:</label>
+                                <input type="number" name="tQtd" id="cQtd" min="0" max="5" value="0" /></p>
+                            <p><label for="cTot">Preço Total: R$</label>
+                                <input type="text" name="tTot" id="cTot" placeholder="Total a Pagar" readonly="" /></p>
+                    </fieldset>
+
+                    <input type="image" name="tEnviar" src="_imagens/botao-enviar.png" />
+                </form>
+            </article>
+        </section>
+        <footer id="rodape">
+            <p>Copyright &copy; 2013 - by Johnny Meyer<br/>
+            <a href="#" target="_blank">Facebook</a> | 
+            <a href="#" target="_blank">Twitter</a></p>
+        </footer>
+
+    </div>
+    <script src="_javascript/script.js"></script>
+</body>
+</html>
